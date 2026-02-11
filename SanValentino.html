@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Un invito speciale 💘</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>
+      Domenica 15 alle 12:45<br>
+      vieni via con me per il pranzo di San Valentino? 💕
+    </h1>
+    <button id="yes">SÌ 😍</button>
+    <button id="no">NO 🙄</button>
+  </div>
+
+  <script>
+    let size = 1;
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("click", () => {
+      size += 0.2;
+      yesBtn.style.transform = `scale(${size})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:white;">
+          Sapevo che avresti detto sì 💖<br>
+          Non vedo l'ora 🥰
+        </h1>
+      `;
+    });
+  </script>
+</body>
+</html>
